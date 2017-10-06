@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MadTrucker</title>
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script src="./assets/js/app.js"></script>
+  -->
+<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="./assets/css/font-awesome.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script src="./assets/js/jquery.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="active game"><a data-toggle="tab" href="#home">Game Setup</a></li>
+        <li class="disabled mad"><a data-toggle="tab" href="#menu1">Mad Trucker</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+          <div class="well text-info hidden"></div>
+          <div class="v-top15">
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-horizontal home">
+                <div class="form-group">
+                  <label for="playerName" class="control-label col-sm-2">Player Name</label>
+                  <div class="col-sm-6">
+                    <input type="text" id="playerName" class="form-control">
+                    <div class="help-block text-danger">Please enter player name</div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="noOfTrucks" class="control-label col-sm-2">Number Of Truckers</label>
+                  <div class="col-sm-6">
+                    <select name="trucks" id="noOfTrucks" class="form-control">
+                      <option value="">Select One</option>
+                      <option selected value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                    </select>
+                  </div>
+
+                </div>
+                <div class="form-group">
+                  <label for="availAmount" class="control-label col-sm-2">Initial Funds</label>
+                  <div class="col-sm-2">
+                    <div class="input-group">
+                      <div class="input-group-addon">$</div>
+                      <input type="number" id="availAmount" class="form-control" value="1000" readonly="readonly">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-6 col-sm-offset-2">
+                    <div class="btn btn-default pull-right" id="startGame">Start Game</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div id="menu1" class="tab-pane fade">
+          <h2 class="text-center">Mad Trucker
+            <div class="v-top15"><button class="btn btn-default text-center" id="reset">Reset</button></div>
+          </h2>
+          <h1 class="success text-danger text-center"></h1>
+          <div class="col-sm-12 v-bottom15">
+            <h4><i class="fa fa-user" aria-hidden="true"></i><span class="user"></span><span class="amount pull-right text-warning"></span>
+
+            </h4>
+            <div class="wraper">
+              <div class="race">
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="v-top15"></div>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-4">
+              <button class="btn btn-default pull-left" id="bet" data-toggle="modal" data-target="#myModal" data-backdrop="static">Place Bet</button>
+
+              <button class="btn btn-default pull-right disabled" id="play">Start Race</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Place Bet</h4>
+          </div>
+          <div class="modal-body">
+            <div class="v-top15">
+              <div class="alert alert-danger error text-center"></div>
+            </div>
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-2">
+                <div class="form-horizontal" id="bet-formcontrols">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="col-md-4 col-md-offset-3">
+              <button type="button" class="btn btn-default" id="submitBet">Bet</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
